@@ -1,9 +1,4 @@
-//
-//  CustomWindowScene.swift
-//  BoringClicker
-//
-//  Created by Christiaan Spithout on 28/12/2024.
-//
+
 
 import SwiftUI
 
@@ -21,7 +16,7 @@ func setWindowSize() {
     DispatchQueue.main.async {
         if let window = NSApplication.shared.windows.first {
             window.setContentSize(NSSize(width: 300, height: 200))
-            window.styleMask = [.titled, .closable, .miniaturizable] // Optional: Configure buttons
+            window.styleMask = [.titled, .closable, .miniaturizable]
             window.isOpaque = false
             window.isMovableByWindowBackground = true
         }
@@ -38,8 +33,8 @@ struct CustomWindow<Content: View>: NSViewControllerRepresentable {
 
         DispatchQueue.main.async {
             if let window = window {
-                window.styleMask = [.closable, .miniaturizable, .titled] // Optional: Set other behaviors here
-                window.setContentSize(NSSize(width: 300, height: 200)) // Exact size of the content
+                window.styleMask = [.closable, .miniaturizable, .titled]
+                window.setContentSize(NSSize(width: 300, height: 200)) 
                 window.isMovableByWindowBackground = true
             }
         }

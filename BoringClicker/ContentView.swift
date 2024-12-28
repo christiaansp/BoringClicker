@@ -4,14 +4,14 @@ struct ClickerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .frame(width: 300, height: 200) // Set exact dimensions for the content
+                .frame(width: 300, height: 200)
                 .background(
                     VisualEffectView(material: .hudWindow, blendingMode: .withinWindow)
                         .edgesIgnoringSafeArea(.all)
                 )
-                .fixedSize() // Prevent the content from resizing
+                .fixedSize()
         }
-        .windowStyle(HiddenTitleBarWindowStyle()) // Minimalistic window style
+        .windowStyle(HiddenTitleBarWindowStyle())
         .defaultAppStorage(UserDefaults.standard)
     }
 }
@@ -50,13 +50,13 @@ struct ContentView: View {
                 }
             }) {
                 Text("Click Me!")
-                    .padding(10) // Padding for internal text space
-                    .background(Color.blue.opacity(0.7)) // Visible button background
-                    .foregroundColor(.white) // Button text color
-                    .cornerRadius(8) // Rounded corners for the button
+                    .padding(10)
+                    .background(Color.blue.opacity(0.7))
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
             }
-            .buttonStyle(BorderlessButtonStyle()) // Prevent default button border styling
-            .padding(.horizontal, 20) // Optional: Adjust padding around the button
+            .buttonStyle(BorderlessButtonStyle())
+            .padding(.horizontal, 20)
         }
         .padding()
     }
